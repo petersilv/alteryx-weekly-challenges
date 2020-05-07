@@ -1,0 +1,213 @@
+﻿challenge_number,challenge_name,difficulty,subject,challenge_url,challenge_id
+1,Join to Range,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-1-Join-to-Range/td-p/36621,36621
+2,Preparing Delimited Data,Beginner,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-2-Preparing-Delimited-Data/td-p/36622,36622
+3,Running Averages,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-3-Running-Averages/td-p/36814,36814
+4,Date Parsing,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-4-Date-Parsing/td-p/36731,36731
+5,HR Position Finder Application,Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-5-HR-Position-Finder-Application/td-p/36732,36732
+6,Spatial Route,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-6-Spatial-Route/td-p/36733,36733
+7,Download Data and Parse JSON,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-7-Download-Data-and-Parse-JSON/td-p/36734,36734
+8,Aggregate Consumer Purchases,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-8-Aggregate-Consumer-Purchases/td-p/36735,36735
+9,Analytics Ranking,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-9-Analytics-Ranking/td-p/36736,36736
+10,Date Time Calculations,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-10-Date-Time-Calculations/td-p/36737,36737
+11,Identify Logical Groups,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-11-Identify-Logical-Groups/td-p/36739,36739
+12,Creating an HR Hierarchy,Advanced,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-12-Creating-an-HR-Hierarchy/td-p/36740,36740
+13,HTML Table Parsing,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-13-HTML-Table-Parsing/td-p/36741,36741
+14,Warehouse Distribution,Intermediate,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-14-Warehouse-Distribution/td-p/36743,36743
+15,Warehouse Shipped Miles,Beginner,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-15-Warehouse-Shipped-Miles/td-p/36744,36744
+16,Parsing Out the New-line Character,Beginner,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-16-Parsing-Out-the-New-line-Character/td-p/36745,36745
+17,Month-over-Month Retention Rate,Advanced,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-17-Month-over-Month-Retention-Rate/td-p/36746,36746
+18,Predicting Baseball Wins,Intermediate,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-18-Predicting-Baseball-Wins/td-p/36747,36747
+19,Excel Record Locator,Beginner,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-19-Excel-Record-Locator/td-p/36748,36748
+20,List Parsing,Advanced,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-20-List-Parsing/td-p/36749,36749
+21,Date Reformatting,Beginner,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-21-Date-Reformatting/td-p/36750,36750
+22,Identify Values to Aggregate,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-22-Identify-Values-to-Aggregate/td-p/36751,36751
+23,Parsing  CPG Data,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-23-Parsing-CPG-Data/td-p/36752,36752
+24,ARIMA Time Series,Intermediate,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-24-ARIMA-Time-Series/td-p/36426,36426
+25,Creating Merchant Combos,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-25-Creating-Merchant-Combos/td-p/36427,36427
+26,Service Technician Travel Distance,Beginner,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-26-Service-Technician-Travel-Distance/td-p/36428,36428
+27,Spatial Telco Coverage Smoothing,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-27-Spatial-Telco-Coverage-Smoothing/td-p/36429,36429
+28,Formatting Financial Data,Intermediate,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-28-Formatting-Financial-Data/td-p/36431,36431
+29,"Alteryx '16 Grand Prix (Race1, L1)",Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-29-Alteryx-16-Grand-Prix-Race1-L1/td-p/36432,36432
+30,"Alteryx '16 Grand Prix (Race 1, L2)",Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-30-Alteryx-16-Grand-Prix-Race-1-L2/td-p/36433,36433
+31,"Alteryx '16 Grand Prix (Race 2, L1)",Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-31-Alteryx-16-Grand-Prix-Race-2-L1/td-p/36434,36434
+32,"Alteryx '16 Grand Prix (Race 2, L2)",Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-32-Alteryx-16-Grand-Prix-Race-2-L2/td-p/36435,36435
+33,Reshaping Nielsen Data,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-33-Reshaping-Nielsen-Data/td-p/36436,36436
+34,Date-Time Formatting,Advanced,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-34-Date-Time-Formatting/td-p/36437,36437
+35,Data Cleansing Practice,Beginner,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-35-Data-Cleansing-Practice/td-p/36438,36438
+36,Data Cleansing Extract Authors,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-36-Data-Cleansing-Extract-Authors/td-p/36439,36439
+37,Parsing a Raw XML File,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-37-Parsing-a-Raw-XML-File/td-p/36577,36577
+38,Data Blending for Batch Output,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-38-Data-Blending-for-Batch-Output/td-p/36578,36578
+39,Trouble Shooting a Broken Macro,Intermediate,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-39-Trouble-Shooting-a-Broken-Macro/td-p/36580,36580
+40,Parsing a HTML File,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-40-Parsing-a-HTML-File/td-p/36581,36581
+41,Analytics PayPeriodCalc,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-41-Analytics-PayPeriodCalc/td-p/36582,36582
+42,"Inspire Europe '16 Grand Prix (L1)",Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-42-Inspire-Europe-16-Grand-Prix-L1/td-p/36596,36596
+43,"Inspire Europe '16 Grand Prix (L2)",Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-43-Inspire-Europe-16-Grand-Prix-L2/td-p/36598,36598
+44,"Inspire Europe '16 Grand Prix (L3)",Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-44-Inspire-Europe-16-Grand-Prix-L3/td-p/36601,36601
+45,Parsing Bureau of Labor Data,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-45-Parsing-Bureau-of-Labor-Data/td-p/36604,36604
+46,Formatting a Date from an Integer,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-46-Formatting-a-Date-from-an-Integer/td-p/40308,40308
+47,Vehicle Identification Number Test,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-47-Vehicle-Identification-Number-Test/td-p/40309,40309
+48,Calculating Distribution Priority,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-48-Calculating-Distribution-Priority/td-p/40310,40310
+49,Reformatting Transactional Data,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-49-Reformatting-Transactional-Data/td-p/40311,40311
+50,Preparing Survey Data,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-50-Preparing-Survey-Data/td-p/40312,40312
+51,Spatial County Coverage,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-51-Spatial-County-Coverage/td-p/40313,40313
+52,Solving the Knapsack Problem,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-52-Solving-the-Knapsack-Problem/td-p/42761,42761
+53,Parsing Report Formatted Data,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-53-Parsing-Report-Formatted-Data/td-p/43449,43449
+54,Data Prep Address Parsing,Beginner,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-54-Data-Prep-Address-Parsing/td-p/44255,44255
+55,2013 Alteryx Grand Prix (L1),Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-55-2013-Alteryx-Grand-Prix-L1/td-p/44954,44954
+56,Parsing and Counting Hashtags,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-56-Parsing-and-Counting-Hashtags/td-p/45704,45704
+57,"Build a Valentine's Day App",Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-57-Build-a-Valentine-s-Day-App/td-p/46372,46372
+58,An Odd String to Date Conversion,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-58-An-Odd-String-to-Date-Conversion/td-p/47283,47283
+59,Is it an Anagram?,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-59-Is-it-an-Anagram/td-p/47963,47963
+60,Fill in the Spatial Object,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-60-Fill-in-the-Spatial-Object/td-p/48852,48852
+61,Save the Astronaut,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-61-Save-the-Astronaut/td-p/49826,49826
+62,Find the Duplicate Clicks,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-62-Find-the-Duplicate-Clicks/td-p/50755,50755
+63,Data Preperation Using Pivot Tools,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-63-Data-Preperation-Using-Pivot-Tools/td-p/51613,51613
+64,Catch Me If You Can,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-64-Catch-Me-If-You-Can/td-p/52805,52805
+65,Fulfilling Inventory Orders,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-65-Fulfilling-Inventory-Orders/td-p/54168,54168
+66,My Wine Problem,Intermediate,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-66-My-Wine-Problem/td-p/55487,55487
+67,Calculate Spatial Angles,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-67-Calculate-Spatial-Angles/td-p/56663,56663
+68,Elapsed Classroom Times,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-68-Elapsed-Classroom-Times/td-p/57766,57766
+69,Web Stock Data,Beginner,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-69-Web-Stock-Data/td-p/58944,58944
+70,Trade Area Drivetime Radii,Beginner,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-70-Trade-Area-Drivetime-Radii/td-p/60111,60111
+71,Recreate SQL Joins in Alteryx,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-71-Recreate-SQL-Joins-in-Alteryx/td-p/61226,61226
+72,Compare Data Sets (Fields/Columns),Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-72-Compare-Data-Sets-Fields-Columns/td-p/62463,62463
+73,Plinko Probabilities,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-73-Plinko-Probabilities/td-p/63284,63284
+74,Build a Factorial Calculator,Beginner,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-74-Build-a-Factorial-Calculator/td-p/65932,65932
+75,Scrabble Word Finder,Advanced,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-75-Scrabble-Word-Finder/td-p/67658,67658
+76,Strava Export Parse and Report,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-76-Strava-Export-Parse-and-Report/td-p/70645,70645
+77,Extending Spatial Lines,Intermediate,"Macros,Spatial",https://community.alteryx.com/t5/Weekly-Challenge/Challenge-77-Extending-Spatial-Lines/td-p/71644,71644
+78,Find the Best Housing Markets,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-78-Find-the-Best-Housing-Markets/td-p/72772,72772
+79,Find the Closest Prime Number,Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-79-Find-the-Closest-Prime-Number/td-p/73857,73857
+80,Slowly Changing Dimensions,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-80-Slowly-Changing-Dimensions/td-p/75108,75108
+81,Multi-Level Bill of Materials Problem,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-81-Multi-Level-Bill-of-Materials-Problem/td-p/76162,76162
+82,Are You in the Path of the Solar Eclipse?,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-82-Are-You-in-the-Path-of-the-Solar-Eclipse/td-p/77420,77420
+83,Pop-Tart and Beer Pairings,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-83-Pop-Tart-and-Beer-Pairings/td-p/78489,78489
+84,"Map Hurricane Harvey's Storm Evolution",Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-84-Map-Hurricane-Harvey-s-Storm-Evolution/td-p/79533,79533
+85,How Did Tara Place in Competition?,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-85-How-Did-Tara-Place-in-Competition/td-p/80465,80465
+86,Create a Macro that Generates Past Dates,Advanced,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-86-Create-a-Macro-that-Generates-Past-Dates/td-p/81499,81499
+87,Losing Daylight,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-87-Losing-Daylight/td-p/82751,82751
+88,Counting Combinations,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-88-Counting-Combinations/td-p/84007,84007
+89,Analyzing Social Data,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-89-Analyzing-Social-Data/td-p/85353,85353
+90,Analyzing Social Data (Part 2),Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/-Challenge-90-Analyzing-Social-Data-Part-2/td-p/86215,86215
+91,Getting into the Weeds,Advanced,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-91-Getting-into-the-Weeds/td-p/87285,87285
+92,The Blob!,Beginner,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-92-The-Blob/td-p/88609,88609
+93,Pumpkin Production,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-93-Pumpkin-Production/td-p/89929,89929
+94,Have we reached Peak Pumpkin?,Advanced,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-94-Have-we-reached-Peak-Pumpkin/td-p/91028,91028
+95,Draw 1000 Apples in Under 60 Seconds,Advanced,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-95-Draw-1000-Apples-in-Under-60-Seconds/td-p/92153,92153
+96,Who Stole my Latte?,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-96-Who-Stole-my-Latte/td-p/93224,93224
+97,SANTALYTICS 2017 - Part 1,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-97-SANTALYTICS-2017-Part-1/td-p/94569,94569
+98,SANTALYTICS 2017 - Part 2,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-98-SANTALYTICS-2017-Part-2/td-p/95596,95596
+99,SANTALYTICS 2017 - Part 3,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-99-SANTALYTICS-2017-Part-3/td-p/104120,104120
+100,Find Ned!,Advanced,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-100-Find-Ned/td-p/112000,112000
+101,The Search for Powder,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-101-The-Search-for-Powder/td-p/119201,119201
+102,Tabulating Flu Data,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-102-Tabulating-Flu-Data/td-p/121475,121475
+103,Just another game?,Advanced,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-103-Just-another-game/td-p/124399,124399
+104,"Love's not the only thing in the air!",Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-104-Love-s-not-the-only-thing-in-the-air/td-p/134546,134546
+105,Think Like a CSE… Tools are missing!,Intermediate,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-105-Think-Like-a-CSE-Tools-are-missing/td-p/139505,139505
+106,How Long were the Lights On?,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-106-How-Long-were-the-Lights-On/td-p/142023,142023
+107,Plot Employment Rates by Gender in the US,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-107-Plot-Employment-Rates-by-Gender-in-the-US/td-p/143971,143971
+108,HeLa Cell Multiplication,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-108-HeLa-Cell-Multiplication/td-p/146051,146051
+109,Women in Government Around the World,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-109-Women-in-Government-Around-the-World/td-p/147982,147982
+110,Think Like a CSE...Reduce the manual inputs!,Intermediate,"Apps,Macros",https://community.alteryx.com/t5/Weekly-Challenge/Challenge-110-Think-Like-a-CSE-Reduce-the-manual-inputs/td-p/150128,150128
+111,Make a Weekly Challenge Dream Team!,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-111-Make-a-Weekly-Challenge-Dream-Team/td-p/152406,152406
+112,Organizing Survey Data,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-112-Organizing-Survey-Data/td-p/154577,154577
+113,Interpolating Spatial Grid Values,Advanced,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-113-Interpolating-Spatial-Grid-Values/td-p/156677,156677
+114,Think Like a CSE...Remove the extra delimiter from the JSON output,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-114-Think-Like-a-CSE-Remove-the-extra-delimiter-from-the-JSON-output/td-p/158892,158892
+115,"Let's get crafty!",Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-115-Let-s-get-crafty/td-p/160773,160773
+116,A Symphony of Parsing Tools!,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-116-A-Symphony-of-Parsing-Tools/td-p/162575,162575
+117,Credit/Debit Midpoints,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-117-Credit-Debit-Midpoints/td-p/164604,164604
+118,Think Like a CSE - A not-so-wild-wildcard input!,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-118-Think-Like-a-CSE-A-not-so-wild-wildcard-input/td-p/167049,167049
+119,Inspire Weekly Challenge,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-119-Inspire-Weekly-Challenge/td-p/169776,169776
+120,Popular Baby Names,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-120-Popular-Baby-Names/td-p/171607,171607
+121,World Cup 2018!,Beginner,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-121-World-Cup-2018/td-p/174392,174392
+122,Think Like a CSE...Ranking Data,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-122-Think-Like-a-CSE-Ranking-Data/td-p/177006,177006
+123,When will Rabbits Rule the World?,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-123-When-will-Rabbits-Rule-the-World/td-p/179283,179283
+124,Air Transport Network Analysis,Advanced,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-124-Air-Transport-Network-Analysis/td-p/181118,181118
+125,US Grand Prix Lap 1 - Data Prep,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-125-US-Grand-Prix-Lap-1-Data-Prep/td-p/183577,183577
+126,Fill in the [Date] Gaps,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-126-Fill-in-the-Date-Gaps/td-p/186140,186140
+127,US Grand Prix Lap 2 - Employee Retention,Intermediate,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-127-US-Grand-Prix-Lap-2-Employee-Retention/td-p/190401,190401
+128,Settle the Score,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-128-Settle-the-Score/td-p/193783,193783
+129,US Grand Prix Lap 3 - Where to Host an Event,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-129-US-Grand-Prix-Lap-3-Where-to-Host-an-Event/td-p/196386,196386
+130,Is There an Echo in Here?,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-130-Is-There-an-Echo-in-Here/td-p/206817,206817
+131,Think Like a CSE... The R Error Message: cannot allocate vector of size...,Advanced,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-131-Think-Like-a-CSE-The-R-Error-Message-cannot-allocate-vector-of-size/td-p/255771,255771
+132,"When Will Community Hit 1,000,000 Posts?",Intermediate,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-132-When-Will-Community-Hit-1-000-000-Posts/td-p/300509,300509
+133,US Grand Prix Prelims - NASA Location Analysis,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-133-US-Grand-Prix-Prelims-NASA-Location-Analysis/td-p/302783,302783
+134,US Grand Prix Prelims - Email Dates,Intermediate,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-134-US-Grand-Prix-Prelims-Email-Dates/td-p/305168,305168
+135,Locker Problem,Intermediate,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-135-Locker-Problem/td-p/307345,307345
+136,Cleudo!,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-136-Cleudo/td-p/310027,310027
+137,"Find the Closest 'Dry' Point!",Beginner,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-137-Find-the-Closest-Dry-Point/td-p/312564,312564
+138,World Series Wins,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-138-World-Series-Wins/td-p/313934,313934
+139,Spooky API Connection,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-139-Spooky-API-Connection/td-p/317303,317303
+140,Prove the Birthday Paradox!,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-140-Prove-the-Birthday-Paradox/td-p/320958,320958
+141,Examination Data Simulation,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-141-Examination-Data-Simulation/td-p/326336,326336
+142,"Life Certainties - Workflows, Death, and Taxes",Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-142-Life-Certainties-Workflows-Death-and-Taxes/td-p/330214,330214
+143,Developer Community Anniversary Edition,Advanced,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-143-Developer-Community-Anniversary-Edition/td-p/333201,333201
+144,Secret Santa Assignments (BAH HUMBUG!),Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-144-Secret-Santa-Assignments-BAH-HUMBUG/td-p/336967,336967
+145,SANTALYTICS 2018 - Part 1,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-145-SANTALYTICS-2018-Part-1/td-p/340333,340333
+146,SANTALYTICS 2018 - Part 2,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-146-SANTALYTICS-2018-Part-2/td-p/343664,343664
+147,EMEA Grand Prix Prelims - Time Series,Intermediate,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-147-EMEA-Grand-Prix-Prelims-Time-Series/td-p/350469,350469
+148,Rotating Century Puzzle,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-148-Rotating-Century-Puzzle/td-p/353651,353651
+149,Market Overlap,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-149-Market-Overlap/td-p/358011,358011
+150,Have the Stars Aligned?!,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-150-Have-the-Stars-Aligned/td-p/361804,361804
+151,Meta Parsing,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-151-Meta-Parsing/td-p/365772,365772
+152,Finding Vehicle Counts,Intermediate,Data Cleansing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-152-Finding-Vehicle-Counts/td-p/369637,369637
+153,And the Oscar goes to...,Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-153-And-the-Oscar-goes-to/td-p/377790,377790
+154,Permute the Data,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-154-Permute-the-Data/td-p/382208,382208
+155,March Cryptanalytics,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-155-March-Cryptanalytics/td-p/386367,386367
+156,What Position Should You Play?,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-156-What-Position-Should-You-Play/td-p/390284,390284
+157,An Expert Challenge,Advanced,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-157-An-Expert-Challenge/td-p/393423,393423
+158,Personality Quiz,Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-158-Personality-Quiz/td-p/396569,396569
+159,April ENcyptanalytics,Advanced,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-159-April-ENcyptanalytics/td-p/399783,399783
+160,Diamonds R Forever,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-160-Diamonds-R-Forever/td-p/402662,402662
+161,"Triangles, Triangles, Triangles",Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-161-Triangles-Triangles-Triangles/td-p/405511,405511
+162,"Mondays....they're Marvel-ous!",Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-162-Mondays-they-re-Marvel-ous/td-p/408483,408483
+163,Caesar Cipher (on the way to Kryptos),Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-163-Caesar-Cipher-on-the-way-to-Kryptos/td-p/411540,411540
+164,Retail Therapy,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-164-Retail-Therapy/td-p/414754,414754
+165,KRYPTOS!!!,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-165-KRYPTOS/td-p/418114,418114
+166,"I'm Gonna Be (500 Miles) - at Inspire",Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-166-I-m-Gonna-Be-500-Miles-at-Inspire/td-p/420899,420899
+167,Grand Prix 2019,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-167-Grand-Prix-2019/td-p/422601,422601
+168,Dice Game - Born to Solve,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-168-Dice-Game-Born-to-Solve/td-p/427239,427239
+169,"Women's World Cup Wins",Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-169-Women-s-World-Cup-Wins/td-p/430886,430886
+170,2019 Grand Prix US - Heat 1,Intermediate,Predictive,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-170-2019-Grand-Prix-US-Heat-1/td-p/433797,433797
+171,2019 Grand Prix US - Heat 2,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-171-2019-Grand-Prix-US-Heat-2/td-p/436155,436155
+172,2019 Grand Prix US - Heat 3,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-172-2019-Grand-Prix-US-Heat-3/td-p/439097,439097
+173,Tour de France - Crow Edition,Beginner,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-173-Tour-de-France-Crow-Edition/td-p/441852,441852
+174,Appyhay Ondaymay!,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-174-Appyhay-Ondaymay/td-p/444846,444846
+175,Tire Size Calculator,Advanced,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-175-Tire-Size-Calculator/td-p/447639,447639
+176,Math Class Drill,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-176-Math-Class-Drill/td-p/450500,450500
+177,Ham Hamlet,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-177-Ham-Hamlet/td-p/453710,453710
+178,Chuck Like a Woodchuck,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-178-Chuck-Like-a-Woodchuck/td-p/456288,456288
+179,Calculating Order Status,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-179-Calculating-Order-Status/td-p/458254,458254
+180,Thousand File Challenge,Advanced,Macros,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-180-Thousand-File-Challenge/td-p/461356,461356
+181,Ingredients of an Old Southern,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-181-Ingredients-of-an-Old-Southern/td-p/464549,464549
+182,Word Sleuthing,Beginner,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-182-Word-Sleuthing/td-p/467649,467649
+183,Roman Numeral Math,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-183-Roman-Numeral-Math/td-p/470370,470370
+184,Closest Pubs to Tobacco Dock,Intermediate,"Data Analysis,Spatial",https://community.alteryx.com/t5/Weekly-Challenge/Challenge-184-Closest-Pubs-to-Tobacco-Dock/td-p/473331,473331
+185,Amplify your Learning with Weekly Challenges!,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-185-Amplify-your-Learning-with-Weekly-Challenges/td-p/476179,476179
+186,Drilling down into Data Analysis,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-186-Drilling-down-into-Data-Analysis/td-p/478673,478673
+187,Generate Prime Numbers,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-187-Generate-Prime-Numbers/td-p/481556,481556
+188,"Difficult, but  not im-parse-able",Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-188-Difficult-but-not-im-parse-able/td-p/484587,484587
+189,Billboard Top 100,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-189-Billboard-Top-100/td-p/487627,487627
+190,Supply Chain Management Challenge,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-190-Supply-Chain-Management-Challenge/td-p/490686,490686
+191,BINGO!,"Advanced,Beginner,Intermediate",Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-191-BINGO/td-p/495204,495204
+192,Crane Leasing,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-192-Crane-Leasing/td-p/497304,497304
+193,Unofficial Holidays,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-193-Unofficial-Holidays/td-p/500029,500029
+194,SANTALYTICS 2019,Beginner,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-194-SANTALYTICS-2019/td-p/502921,502921
+195,XML Parsing,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-195-XML-Parsing/td-p/505892,505892
+196,Determine Profit Margin,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-196-Determine-Profit-Margin/td-p/507424,507424
+197,Customer Density Reporting,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-197-Customer-Density-Reporting/td-p/509620,509620
+198,Beverage Inventory,Intermediate,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-198-Beverage-Inventory/td-p/512894,512894
+199,"Let's all go to the movies!",Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-199-Let-s-all-go-to-the-movies/td-p/516542,516542
+200,Sudoku Solver,"Advanced,Beginner,Intermediate",Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-200-Sudoku-Solver/td-p/519517,519517
+201,"Wage Ain't Nothin' but a Number",Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-201-Wage-Ain-t-Nothin-but-a-Number/td-p/522398,522398
+202,Love Poetry,Intermediate,Apps,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-202-Love-Poetry/td-p/525535,525535
+203,Everyone loves a toll booth,Intermediate,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-203-Everyone-loves-a-toll-booth/td-p/529637,529637
+204,Updating Brazil,Intermediate,Spatial,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-204-Updating-Brazil/td-p/532468,532468
+205,Taynalysis,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-205-Taynalysis/td-p/535857,535857
+206,Hotel Reservations,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-206-Hotel-Reservations/td-p/539029,539029
+207,Parsing Video Game Data,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-207-Parsing-Video-Game-Data/td-p/541880,541880
+208,COVIZ-19,Advanced,Data Analysis,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-208-COVIZ-19/td-p/545132,545132
+209,Parsing Insurance Claims,Advanced,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-209-Parsing-Insurance-Claims/td-p/548470,548470
+210,Better Late Than Never,Intermediate,Data Parsing,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-210-Better-Late-Than-Never/td-p/551930,551930
+211,Generating Email Addresses,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-211-Generating-Email-Addresses/td-p/554858,554858
+212,Draft Masters,Beginner,Data Preparation,https://community.alteryx.com/t5/Weekly-Challenge/Challenge-212-Draft-Masters/td-p/558276,558276

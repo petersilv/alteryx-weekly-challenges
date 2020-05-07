@@ -1,0 +1,736 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="330" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name] = 'response.thread.messages.topic.body.$'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name] = 'response.thread.messages.topic.body.$'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="JSON_Name" size="37" source="TextInput:" type="String" />
+            <Field name="JSON_ValueString" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="JSON_Name" size="37" source="TextInput:" type="String" />
+            <Field name="JSON_ValueString" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="510" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="JSON_ValueString" selected="True" rename="Body" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="678" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Body</Field>
+          <RegExExpression value="&lt;tbody&gt;(.*?)&lt;/tbody&gt;" />
+          <CaseInsensitve value="True" />
+          <Method>ParseSimple</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="True" />
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="RegExOut1" type="V_WString" size="1073741823" />
+          </ParseComplex>
+          <Match>
+            <Field>Body_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="846" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>Body</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-05-05 11:15:08</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Challenge Name</Operand>
+              <StartDate>2020-05-05 11:15:08</StartDate>
+              <EndDate>2020-05-05 11:15:08</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([Body],"Challenge Name")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="1038" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Body</Field>
+          <RegExExpression value="(&lt;tr.*?&gt;.*?&lt;/tr&gt;)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseSimple</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="True" />
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="RegExOut1" type="V_WString" size="1073741823" />
+          </ParseComplex>
+          <Match>
+            <Field>Body_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="1386" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Body</Field>
+          <RegExExpression value="&lt;td.*?&gt;(.*?)&lt;/td&gt;" />
+          <CaseInsensitve value="True" />
+          <Method>ParseSimple</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="True" />
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="RegExOut1" type="V_WString" size="1073741823" />
+          </ParseComplex>
+          <Match>
+            <Field>Body_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1206" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Tile.Tile">
+        <Position x="1578" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Method>UniqueValue</Method>
+          <UniqueValue>
+            <UniqueFields>
+              <Field field="Body" />
+            </UniqueFields>
+            <DontSort value="True" />
+          </UniqueValue>
+          <GroupFields orderChanged="False">
+            <Field name="RecordID" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Body" size="3939" source="TextInput:" type="V_String" />
+            <Field name="Tile_Num" type="Int32" />
+            <Field name="Tile_SequenceNum" type="Int32" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTile" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1770" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="RecordID" />
+          </GroupFields>
+          <HeaderField field="Tile_Num" />
+          <DataField field="Body" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="CrossTab:Group:First:" type="Int32" />
+            <Field name="1" size="3939" source="TextInput:" type="V_String" />
+            <Field name="2" size="3939" source="TextInput:" type="V_String" />
+            <Field name="3" size="3939" source="TextInput:" type="V_String" />
+            <Field name="4" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1962" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_Replace(&#xA;[2], &#xA;'.*href=&quot;(.*?)&quot;.*', &#xA;'$1')" field="challenge_url" size="1073741823" type="V_WString" />
+            <FormulaField expression="REGEX_Replace(&#xA;[2], &#xA;'.*href=&quot;.*?td-p/(\d+)&quot;.*', &#xA;'$1')" field="challenge_id" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>challenge_url = REGEX_Replace(
+[2], 
+'.*href="(.*?)".*', 
+'$1')
+challenge_id = R...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="CrossTab:Group:First:" type="Int32" />
+            <Field name="1" size="3939" source="TextInput:" type="V_String" />
+            <Field name="2" size="3939" source="TextInput:" type="V_String" />
+            <Field name="3" size="3939" source="TextInput:" type="V_String" />
+            <Field name="4" size="3939" source="TextInput:" type="V_String" />
+            <Field name="challenge_url" size="1073741823" source="Formula: REGEX_Replace(&#xA;[2], &#xA;'.*href=&quot;(.*?)&quot;.*', &#xA;'$1')" type="V_WString" />
+            <Field name="challenge_id" size="1073741823" source="Formula: REGEX_Replace(&#xA;[2], &#xA;'.*href=&quot;.*?td-p/(\d+)&quot;.*', &#xA;'$1')" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="2142" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Text</FieldType>
+          <Fields orderChanged="False">
+            <Field name="1" />
+            <Field name="2" />
+            <Field name="3" />
+            <Field name="4" />
+            <Field name="challenge_url" />
+            <Field name="challenge_id" />
+            <Field name="*Unknown" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>REGEX_Replace(
+[_CurrentField_], 
+'&lt;.*?&gt;', 
+'')</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>REGEX_Replace(
+[_CurrentField_], 
+'&lt;.*?&gt;', 
+'')</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="CrossTab:Group:First:" type="Int32" />
+            <Field name="1" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="2" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="3" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="4" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="challenge_url" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+            <Field name="challenge_id" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="2346" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>FirstRow</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="1" />
+            <Field name="2" />
+            <Field name="3" />
+            <Field name="4" />
+            <Field name="RecordID" selected="False" />
+            <Field name="challenge_url" selected="False" />
+            <Field name="challenge_id" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <Expression />
+          <FirstRow>
+            <OnError>Ignore</OnError>
+          </FirstRow>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="CrossTab:Group:First:" type="Int32" />
+            <Field name="#" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="Challenge Name" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="Level of Difficulty" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="Main Subject" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="challenge_url" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+            <Field name="challenge_id" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2514" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="#" selected="True" rename="challenge_number" />
+            <SelectField field="Challenge Name" selected="True" rename="challenge_name" />
+            <SelectField field="Level of Difficulty" selected="True" rename="difficulty" />
+            <SelectField field="Main Subject" selected="True" rename="subject" />
+            <SelectField field="challenge_url" selected="True" />
+            <SelectField field="challenge_id" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="challenge_name" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="difficulty" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="subject" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+            <Field name="challenge_url" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+            <Field name="challenge_id" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="150" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="JSON_Name" />
+                <Field name="JSON_ValueString" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>response.thread.messages.topic.body.$</c>
+                  <c>&lt;DIV&gt;
+&lt;P&gt;
+    Welcome to the Weekly Challenge. 
+    Each week we will post a use case where you can put your Alteryx skills to the test. 
+    You'll be able to share your answers and collaborate with other challengers to arrive at an answer. 
+    Participation will be rewarded - just make sure you are attaching your Alteryx workflows to your responses - 
+     so you can add one of these shiny badges to your collection:
+&lt;/P&gt;
+&lt;BR /&gt;
+&lt;P&gt;
+    Interested in keeping track of which challenges you have completed? 
+    &lt;BR /&gt;
+    Download &lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Weekly-Challenge-Index-amp-Welcome/m-p/454563#M24974" target="_blank"&gt;this workflow&lt;/A&gt; 
+     created by &lt;A href="https://community.alteryx.com/t5/user/viewprofilepage/user-id/85188" target="_blank"&gt;@Hannah_Lissaman&lt;/A&gt;, &lt;A href="https://community.alteryx.com/t5/user/viewprofilepage/user-id/63724" target="_blank"&gt;@Alekh&lt;/A&gt;, and &lt;A href="https://community.alteryx.com/t5/user/viewprofilepage/user-id/3589" target="_blank"&gt;@mceleavey&lt;/A&gt;.
+     &lt;BR /&gt;
+     or try &lt;A href="https://gallery.alteryx.com/#!app/Weekly%2BChallenge%2BDownload/5d3b1b588a933712d01fa279" target="_blank" rel="nofollow noopener noreferrer"&gt;this app&lt;/A&gt; 
+      to download your unsolved challenges.  (Created by: &lt;A href="https://community.alteryx.com/t5/user/viewprofilepage/user-id/13737" target="_blank"&gt;@LordNeilLord&lt;/A&gt;)
+&lt;/P&gt;
+&lt;BR /&gt;
+&lt;TABLE&gt;
+&lt;TBODY&gt;
+&lt;TR bgcolor="#F0F0F0"&gt;&lt;TD&gt;&lt;STRONG&gt;#&lt;/STRONG&gt;&lt;/TD&gt;&lt;TD&gt;&lt;STRONG&gt;Challenge Name&lt;/STRONG&gt;&lt;/TD&gt;&lt;TD&gt;&lt;STRONG&gt;Level of Difficulty&lt;/STRONG&gt;&lt;/TD&gt;&lt;TD&gt;&lt;STRONG&gt;Main Subject&lt;/STRONG&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#FFFFFF"&gt;&lt;TD&gt;1&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-1-Join-to-Range/td-p/36621" target="_blank"&gt;Join to Range&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Intermediate&lt;/TD&gt;&lt;TD&gt;Data Preparation&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#F0F0F0"&gt;&lt;TD&gt;2&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-2-Preparing-Delimited-Data/td-p/36622" target="_blank"&gt;Preparing Delimited Data&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Beginner&lt;/TD&gt;&lt;TD&gt;Data Parsing&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#FFFFFF"&gt;&lt;TD&gt;3&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-3-Running-Averages/td-p/36814" target="_blank"&gt;Running Averages&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Intermediate&lt;/TD&gt;&lt;TD&gt;Data Preparation&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#F0F0F0"&gt;&lt;TD&gt;4&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-4-Date-Parsing/td-p/36731" target="_blank"&gt;Date Parsing&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Advanced&lt;/TD&gt;&lt;TD&gt;Data Parsing&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#FFFFFF"&gt;&lt;TD&gt;5&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-5-HR-Position-Finder-Application/td-p/36732" target="_blank"&gt;HR Position Finder Application&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Intermediate&lt;/TD&gt;&lt;TD&gt;Apps&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#F0F0F0"&gt;&lt;TD&gt;6&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-6-Spatial-Route/td-p/36733" target="_blank"&gt;Spatial Route&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Intermediate&lt;/TD&gt;&lt;TD&gt;Spatial&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#FFFFFF"&gt;&lt;TD&gt;7&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-7-Download-Data-and-Parse-JSON/td-p/36734" target="_blank"&gt;Download Data and Parse JSON&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Advanced&lt;/TD&gt;&lt;TD&gt;Data Parsing&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#F0F0F0"&gt;&lt;TD&gt;8&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-8-Aggregate-Consumer-Purchases/td-p/36735" target="_blank"&gt;Aggregate Consumer Purchases&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Beginner&lt;/TD&gt;&lt;TD&gt;Data Analysis&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#FFFFFF"&gt;&lt;TD&gt;9&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-9-Analytics-Ranking/td-p/36736" target="_blank"&gt;Analytics Ranking&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Beginner&lt;/TD&gt;&lt;TD&gt;Data Analysis&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR bgcolor="#F0F0F0"&gt;&lt;TD&gt;10&lt;/TD&gt;&lt;TD&gt;&lt;A href="https://community.alteryx.com/t5/Weekly-Challenge/Challenge-10-Date-Time-Calculations/td-p/36737" target="_blank"&gt;Date Time Calculations&lt;/A&gt;&lt;/TD&gt;&lt;TD&gt;Intermediate&lt;/TD&gt;&lt;TD&gt;Data Analysis&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;
+&lt;/TABLE&gt;
+&lt;/DIV&gt;</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="JSON_Name" size="37" source="TextInput:" type="String" />
+            <Field name="JSON_ValueString" size="3939" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2682" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="True" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-3" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (14)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (16)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>macro-parse-challenge-index</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (15)</Name>
+          <ToolId value="15" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (14)</Name>
+              <ToolId value="14" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (16)</Description>
+              <Name>Macro Output (16)</Name>
+              <ToolId value="16" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="16" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
