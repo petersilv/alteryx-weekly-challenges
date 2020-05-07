@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1398" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[file_path]&#xA;+ 'challenge_'&#xA;+ &#xA;PadLeft(&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_(\d+).*', &#xA;'$1'), 3, '0')&#xA;+&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_\d+(.*)', &#xA;'$1')" field="file_path" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText>file_path = [file_path]
++ 'challenge_'
++ 
+PadLeft(
+REGEX_Replace(
+[attachment_ti...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="file_path" size="1073741823" source="Formula: [file_path]&#xA;+ 'challenge_'&#xA;+ &#xA;PadLeft(&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_(\d+).*', &#xA;'$1'), 3, '0')&#xA;+&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_\d+(.*)', &#xA;'$1')" type="V_WString" />
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1590" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="attachment_title" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="file_path" size="1073741823" source="Formula: [file_path]&#xA;+ 'challenge_'&#xA;+ &#xA;PadLeft(&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_(\d+).*', &#xA;'$1'), 3, '0')&#xA;+&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_\d+(.*)', &#xA;'$1')" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="450" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>REGEX_Match(
+[JSON_Name],
+'response\.attachments\.attachment\.\d+\.(title|url)\.\$'
+)</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText>REGEX_Match(
+[JSON_Name],
+'response\.attachments\.attachment\.\d+\.(title|url)\...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_name" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_id" size="254" source="TextInput:" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_name" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_id" size="254" source="TextInput:" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="630" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_Replace(&#xA;[JSON_Name], &#xA;'response\.attachments\.attachment\.(\d+)\.(title|url)\.\$',&#xA;'$1'&#xA;)" field="attachment_num" size="1073741823" type="V_WString" />
+            <FormulaField expression="REGEX_Replace(&#xA;[JSON_Name], &#xA;'response\.attachments\.(attachment)\.\d+\.(title|url)\.\$',&#xA;'$1_$2'&#xA;)" field="header" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText>attachment_num = REGEX_Replace(
+[JSON_Name],
+'response\.attachments\.attachment...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_name" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_id" size="254" source="TextInput:" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_num" size="1073741823" source="Formula: REGEX_Replace(&#xA;[JSON_Name], &#xA;'response\.attachments\.attachment\.(\d+)\.(title|url)\.\$',&#xA;'$1'&#xA;)" type="V_WString" />
+            <Field name="header" size="1073741823" source="Formula: REGEX_Replace(&#xA;[JSON_Name], &#xA;'response\.attachments\.(attachment)\.\d+\.(title|url)\.\$',&#xA;'$1_$2'&#xA;)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="822" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="challenge_number" />
+            <Field field="challenge_name" />
+            <Field field="challenge_id" />
+            <Field field="file_path" />
+            <Field field="attachment_num" />
+          </GroupFields>
+          <HeaderField field="header" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="challenge_name" size="254" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="challenge_id" size="254" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_num" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="challenge_number" order="Asc" />
+            <Field field="challenge_name" order="Asc" />
+            <Field field="challenge_id" order="Asc" />
+            <Field field="file_path" order="Asc" />
+            <Field field="attachment_num" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1206" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="file_path" selected="True" />
+            <SelectField field="attachment_title" selected="True" />
+            <SelectField field="attachment_url" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="file_path" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="822" y="235" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="0" />
+          <Fields>
+            <Field name="attachment_title" />
+            <Field name="attachment_url" />
+          </Fields>
+          <Data />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1026" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Ignore</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="challenge_name" size="254" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="challenge_id" size="254" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_num" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="challenge_number" />
+                <Field name="challenge_name" />
+                <Field name="challenge_id" />
+                <Field name="file_path" />
+                <Field name="JSON_Name" />
+                <Field name="JSON_ValueString" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>Join to Range</c>
+                  <c>36621</c>
+                  <c>..\..\challenge-files\001-join-to-range\</c>
+                  <c>response.attachments.attachment.0.title.$</c>
+                  <c>challenge_1_start_file.yxmd</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" source="TextInput:" type="Byte" />
+            <Field name="challenge_name" size="13" source="TextInput:" type="String" />
+            <Field name="challenge_id" source="TextInput:" type="Int32" />
+            <Field name="file_path" size="40" source="TextInput:" type="String" />
+            <Field name="JSON_Name" size="41" source="TextInput:" type="String" />
+            <Field name="JSON_ValueString" size="27" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="246" y="115" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="challenge_number" selected="True" type="V_WString" size="254" />
+            <SelectField field="challenge_name" selected="True" type="V_WString" size="254" />
+            <SelectField field="challenge_id" selected="True" type="V_WString" size="254" />
+            <SelectField field="file_path" selected="True" type="V_WString" size="1073741823" />
+            <SelectField field="JSON_Name" selected="True" type="V_WString" size="1073741823" />
+            <SelectField field="JSON_ValueString" selected="True" type="V_WString" size="1073741823" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_name" size="254" source="TextInput:" type="V_WString" />
+            <Field name="challenge_id" size="254" source="TextInput:" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1757" y="54" width="137.8523" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Download</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="1782" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <URLField>attachment_url</URLField>
+              <OutputMode>SpecificFile</OutputMode>
+              <OutputFileNameField>file_path</OutputFileNameField>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues />
+                <Fields orderChanged="False">
+                  <Field name="file_path" selected="False" />
+                  <Field name="attachment_url" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>GET</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues />
+                <ComposeFields orderChanged="False">
+                  <Field name="file_path" selected="False" />
+                  <Field name="attachment_url" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+              </Payload>
+              <UserName />
+              <Password />
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="file_path" size="1073741823" source="Formula: [file_path]&#xA;+ 'challenge_'&#xA;+ &#xA;PadLeft(&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_(\d+).*', &#xA;'$1'), 3, '0')&#xA;+&#xA;REGEX_Replace(&#xA;[attachment_title],&#xA;'challenge_\d+(.*)', &#xA;'$1')" type="V_WString" />
+                <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-2" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (11)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>macro_download_challenge_attachments</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (10)</Name>
+          <ToolId value="10" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description>Macro Input (11)</Description>
+              <Name>Macro Input (11)</Name>
+              <ToolId value="11" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="11" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

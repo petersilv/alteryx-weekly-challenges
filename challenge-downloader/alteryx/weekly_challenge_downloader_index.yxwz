@@ -52,7 +52,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="19" MaxRecords="">list_input_challenges.yxdb</File>
+          <File FileFormat="19" MaxRecords="">..\data\list_box_values_challenges.yxdb</File>
           <Passwords />
           <FormatSpecificOptions>
             <NoSpatialIndex>False</NoSpatialIndex>
@@ -62,9 +62,12 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>list_input_challenges.yxdb</DefaultAnnotationText>
+          <DefaultAnnotationText>list_box_values_challenges.yxdb</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -191,7 +194,7 @@ VALUE = [challenge_id]
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>macro_get_api (26)</Name>
+          <Name>macro_api_get_request (26)</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -202,7 +205,7 @@ VALUE = [challenge_id]
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings Macro="macro_get_api.yxmc" />
+      <EngineSettings Macro="macro_api_get_request.yxmc" />
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
@@ -280,7 +283,7 @@ VALUE = [challenge_id]
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>weekly-challenge-downloader-index</Name>
+      <Name>weekly_challenge_downloader_index</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
