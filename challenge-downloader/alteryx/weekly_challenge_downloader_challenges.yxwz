@@ -1,6 +1,26 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2020.1">
   <Nodes>
+    <Node ToolID="87">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1266" y="30" width="264" height="276" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Interface Tools</Text>
+          <Font name="Courier New" size="15.75" style="0" />
+          <TextColor name="Gray" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
         <Position x="0" y="0" width="59" height="59" />
@@ -16,7 +36,7 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.ListBox">
-        <Position x="222" y="54" width="59" height="59" />
+        <Position x="1326" y="90" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -26,11 +46,14 @@
           <DefaultAnnotationText>List Box (2)</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="330" />
+        <Position x="126" y="438" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -67,17 +90,14 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="222" y="330" />
+        <Position x="294" y="438" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Expression>[challenge_id]
 IN
 (
-'36621',
-'36622',
-'36814',
-'36731'
+'36621'
 )</Expression>
           <Mode>Custom</Mode>
         </Configuration>
@@ -87,10 +107,7 @@ IN
           <DefaultAnnotationText>[challenge_id]
 IN
 (
-'36621',
-'36622',
-'36814',
-'36731'
+'36621'
 )</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
@@ -119,7 +136,7 @@ IN
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="234" y="186" width="59" height="59" />
+        <Position x="1338" y="198" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -130,66 +147,9 @@ IN
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="11">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1182" y="522" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="'/messages/id/'&#xA;+ [challenge_id]" field="endpoint" size="1073741823" type="V_WString" />
-            <FormulaField expression="1000" field="page_size" size="1073741823" type="V_WString" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText><![CDATA[endpoint = '/messages/id/'
-+ [challenge_id]
-page_size = 1000
-]]></DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
-            <Field name="endpoint" size="1073741823" source="Formula: '/messages/id/'&#xA;+ [challenge_id]" type="V_WString" />
-            <Field name="page_size" size="1073741823" source="Formula: 1000" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="23">
-      <GuiSettings>
-        <Position x="1350" y="522" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name>macro_api_get_request (12)</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
-            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
-            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings Macro=".\macro_api_get_request.yxmc" />
-    </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="402" y="318" />
+        <Position x="474" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -219,7 +179,7 @@ page_size = 1000
     </Node>
     <Node ToolID="41">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="570" y="318" />
+        <Position x="642" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -248,7 +208,7 @@ page_size = 1000
     </Node>
     <Node ToolID="48">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
-        <Position x="978" y="318" />
+        <Position x="1050" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -293,300 +253,332 @@ page_size = 1000
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
     </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1182" y="738" />
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="30" y="30" width="1212" height="276" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <FormulaFields>
-            <FormulaField expression="'/messages/id/'&#xA;+ [challenge_id]&#xA;+'/uploads/attachments'&#xA;" field="endpoint" size="1073741823" type="V_WString" />
-            <FormulaField expression="1000" field="page_size" size="1073741823" type="V_WString" />
-          </FormulaFields>
+          <Text />
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="247" g="247" b="247" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText>endpoint = '/messages/id/'
-+ [challenge_id]
-+'/uploads/attachments'
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="42" width="1164" height="120" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Weekly Challenge Downloader - Challenges</Text>
+          <Font name="Segoe UI" size="36" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="162" width="1164" height="132" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Description:   Use the challenge list to pick the challenges to download, create a 
+               folder for the challenge and download description + start file from forum 
+               post
 
-page_size =...</DefaultAnnotationText>
+Author:        Peter Silvester</Text>
+          <Font name="Courier New" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
-            <Field name="endpoint" size="1073741823" source="Formula: '/messages/id/'&#xA;+ [challenge_id]&#xA;+'/uploads/attachments'&#xA;" type="V_WString" />
-            <Field name="page_size" size="1073741823" source="Formula: 1000" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="24">
+    <Node ToolID="88">
       <GuiSettings>
-        <Position x="1350" y="738" />
+        <Position x="846" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
-          <Name>macro_api_get_request (20)</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
-            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
-            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings Macro=".\macro_api_get_request.yxmc" />
-    </Node>
-    <Node ToolID="59">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Directory.Directory">
-        <Position x="54" y="558" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Directory>..\..\</Directory>
-          <FileSpec>*.*</FileSpec>
-          <IncludeSubDirs value="True" />
-        </Configuration>
-        <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>dir ..\..\*.*</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="FullPath" size="32767" source="Directory:" type="V_WString" />
-            <Field name="Directory" size="32767" source="Directory:" type="V_WString" />
-            <Field name="FileName" size="260" source="Directory:" type="V_WString" />
-            <Field name="ShortFileName" size="14" source="Directory:" type="V_WString" />
-            <Field name="CreationTime" source="Directory:" type="DateTime" />
-            <Field name="LastAccessTime" source="Directory:" type="DateTime" />
-            <Field name="LastWriteTime" source="Directory:" type="DateTime" />
-            <Field name="Size" source="Directory:" type="Int64" />
-            <Field name="AttributeArchive" source="Directory:" type="Bool" />
-            <Field name="AttributeCompressed" source="Directory:" type="Bool" />
-            <Field name="AttributeEncrypted" source="Directory:" type="Bool" />
-            <Field name="AttributeHidden" source="Directory:" type="Bool" />
-            <Field name="AttributeNormal" source="Directory:" type="Bool" />
-            <Field name="AttributeOffline" source="Directory:" type="Bool" />
-            <Field name="AttributeReadonly" source="Directory:" type="Bool" />
-            <Field name="AttributeReparsePoint" source="Directory:" type="Bool" />
-            <Field name="AttributeSparseFile" source="Directory:" type="Bool" />
-            <Field name="AttributeSystem" source="Directory:" type="Bool" />
-            <Field name="AttributeTemporary" source="Directory:" type="Bool" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDirectory" />
-    </Node>
-    <Node ToolID="60">
-      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="222" y="558" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SummarizeFields>
-            <SummarizeField field="Directory" action="GroupBy" rename="Directory" />
-          </SummarizeFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Directory" size="32767" source="Summarize: GroupBy - Directory" type="V_WString" />
-          </RecordInfo>
-          <SortInfo>
-            <Field field="Directory" order="Asc" />
-          </SortInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-    </Node>
-    <Node ToolID="61">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="402" y="558" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>REGEX_Match([Directory], 
-'.*challenge-files\\\d+.*')</Expression>
-          <Mode>Custom</Mode>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText>REGEX_Match([Directory], 
-'.*challenge-files\\\d+.*')</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="True">
-          <RecordInfo>
-            <Field name="Directory" size="32767" source="Summarize: GroupBy - Directory" type="V_WString" />
-          </RecordInfo>
-          <SortInfo>
-            <Field field="Directory" order="Asc" />
-          </SortInfo>
-        </MetaInfo>
-        <MetaInfo connection="False">
-          <RecordInfo>
-            <Field name="Directory" size="32767" source="Summarize: GroupBy - Directory" type="V_WString" />
-          </RecordInfo>
-          <SortInfo>
-            <Field field="Directory" order="Asc" />
-          </SortInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
-    <Node ToolID="62">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="570" y="546" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="'..\..\'&#xA;+&#xA;REGEX_Replace([Directory], &#xA;'.*(challenge-files.*)',&#xA;'\1')" field="Directory" size="32767" type="V_WString" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText>Directory = '..\..\'
-+
-REGEX_Replace([Directory], 
-'.*(challenge-files.*)',
-'\1'...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Directory" size="32767" source="Formula: '..\..\'&#xA;+&#xA;REGEX_Replace([Directory], &#xA;'.*(challenge-files.*)',&#xA;'\1')" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="63">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="774" y="330" />
-      </GuiSettings>
-      <Properties>
-        <Configuration joinByRecordPos="False">
-          <JoinInfo connection="Left">
-            <Field field="file_path" />
-          </JoinInfo>
-          <JoinInfo connection="Right">
-            <Field field="Directory" />
-          </JoinInfo>
-          <SelectConfiguration>
-            <Configuration outputConnection="Join">
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Right_Directory" selected="False" input="Right_" />
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-          </SelectConfiguration>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Left">
-          <RecordInfo>
-            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
-          </RecordInfo>
-          <SortInfo noProgress="True">
-            <Field field="file_path" />
-          </SortInfo>
-        </MetaInfo>
-        <MetaInfo connection="Join">
-          <RecordInfo>
-            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
-            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
-          </RecordInfo>
-          <SortInfo>
-            <Field field="file_path" order="" />
-          </SortInfo>
-        </MetaInfo>
-        <MetaInfo connection="Right">
-          <RecordInfo>
-            <Field name="Directory" size="32767" source="Formula: '..\..\'&#xA;+&#xA;REGEX_Replace([Directory], &#xA;'.*(challenge-files.*)',&#xA;'\1')" type="V_WString" />
-          </RecordInfo>
-          <SortInfo noProgress="True">
-            <Field field="Directory" />
-          </SortInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
-    </Node>
-    <Node ToolID="79">
-      <GuiSettings>
-        <Position x="1182" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name>macro_create_challenge_folders (69)</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings Macro="macro_create_challenge_folders.yxmc" />
-    </Node>
-    <Node ToolID="81">
-      <GuiSettings>
-        <Position x="1530" y="738" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name>macro_download_challenge_attachments (72)</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings Macro="macro_download_challenge_attachments.yxmc" />
-    </Node>
-    <Node ToolID="83">
-      <GuiSettings>
-        <Position x="1530" y="522" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name>macro_parse_challenge_description (82)</Name>
-          <DefaultAnnotationText />
+          <AnnotationText>Macro - 
+Exclude Existing Challenges</AnnotationText>
+          <DefaultAnnotationText>Macro - 
+Exclude Existing Challenges</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <Dependencies>
           <Implicit />
         </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+            <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+            <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+            <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="file_path" />
+          </SortInfo>
+        </MetaInfo>
       </Properties>
-      <EngineSettings Macro="macro_parse_challenge_description.yxmc" />
+      <EngineSettings Macro="macro_exclude_existing_challenges.yxmc" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1229" y="581" width="492" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Download Description</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1254" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="'/messages/id/'&#xA;+ [challenge_id]" field="endpoint" size="1073741823" type="V_WString" />
+                <FormulaField expression="1000" field="page_size" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[endpoint = '/messages/id/'
++ [challenge_id]
+page_size = 1000
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
+                <Field name="endpoint" size="1073741823" source="Formula: '/messages/id/'&#xA;+ [challenge_id]" type="V_WString" />
+                <Field name="page_size" size="1073741823" source="Formula: 1000" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings>
+            <Position x="1422" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>macro_api_get_request (12)</Name>
+              <AnnotationText>Macro - 
+API Get Request</AnnotationText>
+              <DefaultAnnotationText>Macro - 
+API Get Request</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro=".\macro_api_get_request.yxmc" />
+        </Node>
+        <Node ToolID="83">
+          <GuiSettings>
+            <Position x="1602" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>macro_parse_challenge_description (82)</Name>
+              <AnnotationText>Macro - 
+Parse Challenge Description</AnnotationText>
+              <DefaultAnnotationText>Macro - 
+Parse Challenge Description</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="macro_parse_challenge_description.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="91">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1229" y="365" width="217.5785" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Create Challenge Folders</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="79">
+          <GuiSettings>
+            <Position x="1254" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>macro_create_challenge_folders (69)</Name>
+              <AnnotationText>Macro - 
+Create Challenge Folders</AnnotationText>
+              <DefaultAnnotationText>Macro - 
+Create Challenge Folders</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="macro_create_challenge_folders.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1229" y="797" width="475" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Download Attachments</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1254" y="846" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="'/messages/id/'&#xA;+ [challenge_id]&#xA;+'/uploads/attachments'&#xA;" field="endpoint" size="1073741823" type="V_WString" />
+                <FormulaField expression="1000" field="page_size" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText>endpoint = '/messages/id/'
++ [challenge_id]
++'/uploads/attachments'
+
+page_size =...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
+                <Field name="endpoint" size="1073741823" source="Formula: '/messages/id/'&#xA;+ [challenge_id]&#xA;+'/uploads/attachments'&#xA;" type="V_WString" />
+                <Field name="page_size" size="1073741823" source="Formula: 1000" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings>
+            <Position x="1422" y="846" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>macro_api_get_request (20)</Name>
+              <AnnotationText>Macro - 
+API Get Request</AnnotationText>
+              <DefaultAnnotationText>Macro - 
+API Get Request</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="challenge_number" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_name" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="challenge_id" size="254" source="File: Y:\Peter Silvester\Side Projects\TIL\alteryx-weekly-challenges\challenge-downloader\data\challenge_list.csv" type="V_WString" />
+                <Field name="file_path" size="1073741823" source="Formula: '..\..\challenge-files\'&#xA;+ PadLeft([challenge_number], 3, '0')&#xA;+ '-'&#xA;+ &#xA;Replace(&#xA;LowerCase( REGEX_REPLACE([challenge_name],'[[:punct:]]',''))&#xA;, ' ', '-')&#xA;+ '\'" type="V_WString" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro=".\macro_api_get_request.yxmc" />
+        </Node>
+        <Node ToolID="92">
+          <GuiSettings>
+            <Position x="1602" y="846" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>macro_download_challenge_attachments (72)</Name>
+              <AnnotationText>Macro - 
+Download Attachments</AnnotationText>
+              <DefaultAnnotationText>Macro - 
+Download Attachments</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="macro_download_challenge_attachments.yxmc" />
+        </Node>
+      </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
@@ -598,7 +590,7 @@ REGEX_Replace([Directory],
       <Origin ToolID="7" Connection="Output" />
       <Destination ToolID="8" Connection="Input" />
     </Connection>
-    <Connection name="#2">
+    <Connection name="#2" Wireless="True">
       <Origin ToolID="9" Connection="Action" />
       <Destination ToolID="8" Connection="Action" />
     </Connection>
@@ -607,24 +599,12 @@ REGEX_Replace([Directory],
       <Destination ToolID="18" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="23" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="23" Connection="Output" />
-      <Destination ToolID="83" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="18" Connection="Output" />
       <Destination ToolID="41" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="41" Connection="Output" />
-      <Destination ToolID="63" Connection="Left" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="62" Connection="Output" />
-      <Destination ToolID="63" Connection="Right" />
+      <Destination ToolID="88" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="48" Connection="Output2" />
@@ -639,28 +619,24 @@ REGEX_Replace([Directory],
       <Destination ToolID="79" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="19" Connection="Output" />
       <Destination ToolID="24" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="24" Connection="Output" />
-      <Destination ToolID="81" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="59" Connection="Output" />
-      <Destination ToolID="60" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="60" Connection="Output" />
-      <Destination ToolID="61" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="61" Connection="True" />
-      <Destination ToolID="62" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="63" Connection="Left" />
-      <Destination ToolID="48" Connection="Input" />
+      <Destination ToolID="92" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -766,8 +742,9 @@ REGEX_Replace([Directory],
         <Tool ToolId="23" Selected="True" />
         <Tool ToolId="24" Selected="True" />
         <Tool ToolId="79" Selected="True" />
-        <Tool ToolId="81" Selected="True" />
         <Tool ToolId="83" Selected="True" />
+        <Tool ToolId="88" Selected="True" />
+        <Tool ToolId="92" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />

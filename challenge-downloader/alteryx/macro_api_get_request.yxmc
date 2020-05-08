@@ -357,7 +357,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>macro-api-standard</Name>
+      <Name>macro_api_get_request</Name>
       <Description />
       <RootToolName />
       <ToolVersion />

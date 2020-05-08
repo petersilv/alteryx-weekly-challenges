@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1398" y="103" />
+        <Position x="1614" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -34,7 +34,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1590" y="103" />
+        <Position x="1818" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -61,7 +61,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="450" y="115" />
+        <Position x="450" y="139" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -104,7 +104,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="630" y="103" />
+        <Position x="630" y="127" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -138,7 +138,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="822" y="103" />
+        <Position x="822" y="127" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -169,6 +169,8 @@ REGEX_Replace(
             <Field name="challenge_id" size="254" source="CrossTab:Group:First:" type="V_WString" />
             <Field name="file_path" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
             <Field name="attachment_num" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
           </RecordInfo>
           <SortInfo>
             <Field field="challenge_number" order="Asc" />
@@ -183,7 +185,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1206" y="103" />
+        <Position x="1230" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -213,7 +215,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="822" y="235" />
+        <Position x="822" y="259" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -240,7 +242,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1026" y="103" />
+        <Position x="1026" y="127" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -283,7 +285,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="54" y="115" />
+        <Position x="54" y="139" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -294,7 +296,7 @@ REGEX_Replace(
           <Optional value="False" />
           <TextInput>
             <Configuration>
-              <NumRows value="1" />
+              <NumRows value="4" />
               <Fields>
                 <Field name="challenge_number" />
                 <Field name="challenge_name" />
@@ -312,6 +314,30 @@ REGEX_Replace(
                   <c>response.attachments.attachment.0.title.$</c>
                   <c>challenge_1_start_file.yxmd</c>
                 </r>
+                <r>
+                  <c>1</c>
+                  <c>Join to Range</c>
+                  <c>36621</c>
+                  <c>..\..\challenge-files\001-join-to-range\</c>
+                  <c>response.attachments.attachment.0.url.$</c>
+                  <c>https://community.alteryx.com/pvsmt99345/attachments/pvsmt99345/weeklychallenge/25/4/challenge_1_start_file.yxmd</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>Join to Range</c>
+                  <c>36621</c>
+                  <c>..\..\challenge-files\001-join-to-range\</c>
+                  <c>response.attachments.attachment.1.title.$</c>
+                  <c>challenge_1_solution.yxmd</c>
+                </r>
+                <r>
+                  <c>1</c>
+                  <c>Join to Range</c>
+                  <c>36621</c>
+                  <c>..\..\challenge-files\001-join-to-range\</c>
+                  <c>response.attachments.attachment.1.url.$</c>
+                  <c>https://community.alteryx.com/pvsmt99345/attachments/pvsmt99345/weeklychallenge/25/5/challenge_1_solution.yxmd</c>
+                </r>
               </Data>
             </Configuration>
           </TextInput>
@@ -328,7 +354,7 @@ REGEX_Replace(
             <Field name="challenge_id" source="TextInput:" type="Int32" />
             <Field name="file_path" size="40" source="TextInput:" type="String" />
             <Field name="JSON_Name" size="41" source="TextInput:" type="String" />
-            <Field name="JSON_ValueString" size="27" source="TextInput:" type="String" />
+            <Field name="JSON_ValueString" size="112" source="TextInput:" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -336,7 +362,7 @@ REGEX_Replace(
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="246" y="115" />
+        <Position x="246" y="139" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -370,9 +396,55 @@ REGEX_Replace(
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
     </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1422" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>NotContains</Operator>
+            <Field>attachment_title</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-05-08 13:00:59</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>solution</Operand>
+              <StartDate>2020-05-08 13:00:59</StartDate>
+              <EndDate>2020-05-08 13:00:59</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
+          <DefaultAnnotationText>!Contains([attachment_title],"solution")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="file_path" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="file_path" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="attachment_title" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="attachment_url" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1757" y="54" width="137.8523" height="133" />
+        <Position x="1997" y="65" width="137.8523" height="133" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -390,7 +462,7 @@ REGEX_Replace(
       <ChildNodes>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-            <Position x="1782" y="103" />
+            <Position x="2022" y="114" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -466,7 +538,7 @@ REGEX_Replace(
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="1" Connection="Input" />
+      <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="8" Connection="Output" />
@@ -479,6 +551,10 @@ REGEX_Replace(
     <Connection>
       <Origin ToolID="13" Connection="Output" />
       <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="True" />
+      <Destination ToolID="1" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

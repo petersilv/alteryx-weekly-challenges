@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="54" />
+        <Position x="102" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -46,132 +46,18 @@
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="31">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1038" y="222" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <File FileFormat="19" MaxRecords="">..\data\list_box_values_challenges.yxdb</File>
-          <Passwords />
-          <FormatSpecificOptions>
-            <NoSpatialIndex>False</NoSpatialIndex>
-            <SaveSource>True</SaveSource>
-          </FormatSpecificOptions>
-          <MultiFile value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>list_box_values_challenges.yxdb</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-    </Node>
-    <Node ToolID="32">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="762" y="222" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="[challenge_number] + ' - ' + [challenge_name]" field="NAME" size="1073741823" type="V_WString" />
-            <FormulaField expression="[challenge_id]" field="VALUE" size="1073741823" type="V_WString" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText><![CDATA[NAME = [challenge_number] + ' - ' + [challenge_name]
-VALUE = [challenge_id]
-]]></DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="challenge_number" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
-            <Field name="challenge_name" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
-            <Field name="difficulty" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
-            <Field name="subject" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
-            <Field name="challenge_url" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
-            <Field name="challenge_id" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
-            <Field name="NAME" size="1073741823" source="Formula: [challenge_number] + ' - ' + [challenge_name]" type="V_WString" />
-            <Field name="VALUE" size="1073741823" source="Formula: [challenge_id]" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="34">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="894" y="222" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="challenge_number" selected="False" />
-            <SelectField field="challenge_name" selected="False" />
-            <SelectField field="difficulty" selected="False" />
-            <SelectField field="subject" selected="False" />
-            <SelectField field="challenge_url" selected="False" />
-            <SelectField field="challenge_id" selected="False" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="NAME" size="1073741823" source="Formula: [challenge_number] + ' - ' + [challenge_name]" type="V_WString" />
-            <Field name="VALUE" size="1073741823" source="Formula: [challenge_id]" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="35">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1026" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <File MaxRecords="" FileFormat="0">..\data\challenge_list.csv</File>
-          <Passwords />
-          <FormatSpecificOptions>
-            <LineEndStyle>CRLF</LineEndStyle>
-            <Delimeter>,</Delimeter>
-            <ForceQuotes>False</ForceQuotes>
-            <HeaderRow>True</HeaderRow>
-            <CodePage>65001</CodePage>
-            <WriteBOM>True</WriteBOM>
-          </FormatSpecificOptions>
-          <MultiFile value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>challenge_list.csv</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-    </Node>
     <Node ToolID="36">
       <GuiSettings>
-        <Position x="582" y="54" />
+        <Position x="462" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
           <Name>macro_parse_challenge_index (25)</Name>
-          <DefaultAnnotationText />
+          <AnnotationText>Macro -
+Parse Challenge Index</AnnotationText>
+          <DefaultAnnotationText>Macro -
+Parse Challenge Index</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
@@ -187,15 +73,18 @@ VALUE = [challenge_id]
       </Properties>
       <EngineSettings Macro="macro_parse_challenge_index.yxmc" />
     </Node>
-    <Node ToolID="45">
+    <Node ToolID="56">
       <GuiSettings>
-        <Position x="234" y="54" />
+        <Position x="282" y="378" />
       </GuiSettings>
       <Properties>
         <Configuration />
         <Annotation DisplayMode="0">
           <Name>macro_api_get_request (26)</Name>
-          <DefaultAnnotationText />
+          <AnnotationText>Macro - 
+API Get Request</AnnotationText>
+          <DefaultAnnotationText>Macro - 
+API Get Request</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
@@ -207,46 +96,280 @@ VALUE = [challenge_id]
       </Properties>
       <EngineSettings Macro="macro_api_get_request.yxmc" />
     </Node>
-    <Node ToolID="43">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="414" y="54" />
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Label.Label">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Label.Label">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Label.Label">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Label.Label">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="30" y="30" width="1212" height="252" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="endpoint" selected="False" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
+          <Text />
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="247" g="247" b="247" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
-            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="42" width="1164" height="120" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Weekly Challenge Downloader - Index</Text>
+          <Font name="Segoe UI" size="36" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="162" width="1164" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Description:   Download the index page for the challenges to create a list of all 
+               challenges and the link required to download the individual challenges
+
+Author:        Peter Silvester</Text>
+          <Font name="Courier New" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="893" y="329" width="187.5297" height="149" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Write challenge list</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="918" y="378" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">..\data\challenge_list.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>challenge_list.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="629" y="509" width="420" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Create list for challenge app</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="918" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">..\data\list_box_values_challenges.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>list_box_values_challenges.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="654" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[challenge_number] + ' - ' + [challenge_name]" field="NAME" size="1073741823" type="V_WString" />
+                <FormulaField expression="[challenge_id]" field="VALUE" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[ ]]></AnnotationText>
+              <DefaultAnnotationText><![CDATA[NAME = [challenge_number] + ' - ' + [challenge_name]
+VALUE = [challenge_id]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="challenge_number" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+                <Field name="challenge_name" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+                <Field name="difficulty" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+                <Field name="subject" size="3939" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_String" />
+                <Field name="challenge_url" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+                <Field name="challenge_id" size="1073741823" source="Formula: REGEX_Replace(&#xA;[_CurrentField_], &#xA;'&lt;.*?&gt;', &#xA;'')" type="V_WString" />
+                <Field name="NAME" size="1073741823" source="Formula: [challenge_number] + ' - ' + [challenge_name]" type="V_WString" />
+                <Field name="VALUE" size="1073741823" source="Formula: [challenge_id]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="786" y="558" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="challenge_number" selected="False" />
+                <SelectField field="challenge_name" selected="False" />
+                <SelectField field="difficulty" selected="False" />
+                <SelectField field="subject" selected="False" />
+                <SelectField field="challenge_url" selected="False" />
+                <SelectField field="challenge_id" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="NAME" size="1073741823" source="Formula: [challenge_number] + ' - ' + [challenge_name]" type="V_WString" />
+                <Field name="VALUE" size="1073741823" source="Formula: [challenge_id]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="45" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="32" Connection="Output" />
-      <Destination ToolID="34" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="34" Connection="Output" />
-      <Destination ToolID="31" Connection="Input" />
+      <Destination ToolID="56" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="36" Connection="Output" />
@@ -257,12 +380,16 @@ VALUE = [challenge_id]
       <Destination ToolID="35" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="45" Connection="Output" />
-      <Destination ToolID="43" Connection="Input" />
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="43" Connection="Output" />
-      <Destination ToolID="36" Connection="Input" />
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -279,7 +406,7 @@ VALUE = [challenge_id]
     <ShowAllMacroMessages value="False" />
     <ShowConnectionStatusIsOn value="True" />
     <ShowConnectionStatusOnlyWhenRunning value="False" />
-    <ZoomLevel value="-1" />
+    <ZoomLevel value="-3" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
@@ -307,10 +434,35 @@ VALUE = [challenge_id]
       <Questions>
         <Question>
           <Type>Tab</Type>
-          <Description>Questions</Description>
+          <Description>Challenge Index</Description>
           <Name>Tab (30)</Name>
           <ToolId value="30" />
-          <Questions />
+          <Questions>
+            <Question>
+              <Type>Label</Type>
+              <Description><![CDATA[ ]]></Description>
+              <Name>Label (47)</Name>
+              <ToolId value="47" />
+            </Question>
+            <Question>
+              <Type>Label</Type>
+              <Description>There is no configuration for this app. Run the app to download the challenge index.</Description>
+              <Name>Label (46)</Name>
+              <ToolId value="46" />
+            </Question>
+            <Question>
+              <Type>Label</Type>
+              <Description><![CDATA[ ]]></Description>
+              <Name>Label (48)</Name>
+              <ToolId value="48" />
+            </Question>
+            <Question>
+              <Type>Label</Type>
+              <Description>On completion of this app the challenge downloader app will run.</Description>
+              <Name>Label (49)</Name>
+              <ToolId value="49" />
+            </Question>
+          </Questions>
         </Question>
       </Questions>
       <ModuleType>Wizard</ModuleType>
@@ -321,16 +473,8 @@ VALUE = [challenge_id]
       <MacroOutputs />
       <Wiz_CustomHelp value="False" />
       <Wiz_CustomGraphic value="False" />
-      <Wiz_ShowOutput value="True" />
-      <Wiz_OpenOutputTools>
-        <Tool ToolId="31" Selected="True" />
-        <Tool ToolId="35" Selected="True" />
-        <Tool ToolId="36" Selected="True" />
-        <Tool ToolId="45" Selected="True" />
-      </Wiz_OpenOutputTools>
-      <Wiz_OutputMessage />
-      <Wiz_NoOutputFilesMessage />
-      <Wiz_ChainRunWizard />
+      <Wiz_ShowOutput value="False" />
+      <Wiz_ChainRunWizard>weekly_challenge_downloader_challenges.yxwz</Wiz_ChainRunWizard>
     </RuntimeProperties>
   </Properties>
 </AlteryxDocument>
