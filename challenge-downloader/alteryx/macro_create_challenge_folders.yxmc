@@ -21,21 +21,21 @@
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="Replace([cmd], '\\Mac\My Drive', 'Y:')" field="cmd" size="2147483647" type="V_String" />
-            <FormulaField expression="// Go to the correct drive&#xA;REGEX_Replace([Engine.WorkflowDirectory], '(\w:).*', '$1')&#xA;&#xA;// Go to the workflow directory&#xA;+ '&#xA;cd '&#xA;+ [Engine.WorkflowDirectory]&#xA;+ '&#xA;'&#xA;&#xA;// Insert the make directory commands&#xA;+ [cmd]&#xA;&#xA;// Delete the bat file after executing&#xA;+ '&#xA;(goto) 2&gt;nul &amp; del &quot;%~f0&quot;'&#xA;&#xA;" field="cmd" size="2147483647" type="V_String" />
+            <FormulaField expression="Replace([Engine.WorkflowDirectory], '\\Mac\My Drive', 'Y:')" field="workflow_dir" size="1073741823" type="V_WString" />
+            <FormulaField expression="// Go to the correct drive&#xA;REGEX_Replace([workflow_dir], '(\w:).*', '$1')&#xA;&#xA;// Go to the workflow directory&#xA;+ '&#xA;cd '&#xA;+ [workflow_dir]&#xA;+ '&#xA;'&#xA;&#xA;// Insert the make directory commands&#xA;+ [cmd]&#xA;&#xA;// Delete the bat file after executing&#xA;+ '&#xA;(goto) 2&gt;nul &amp; del &quot;%~f0&quot;'&#xA;&#xA;" field="cmd" size="2147483647" type="V_String" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText>cmd = Replace([cmd], '\\Mac\My Drive', 'Y:')
-cmd = // Go to the correct drive
-RE...</DefaultAnnotationText>
+          <DefaultAnnotationText>workflow_dir = Replace([Engine.WorkflowDirectory], '\\Mac\My Drive', 'Y:')
+cmd =...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="cmd" size="2147483647" source="Formula: // Go to the correct drive&#xA;REGEX_Replace([Engine.WorkflowDirectory], '(\w:).*', '$1')&#xA;&#xA;// Go to the workflow directory&#xA;+ '&#xA;cd '&#xA;+ [Engine.WorkflowDirectory]&#xA;+ '&#xA;'&#xA;&#xA;// Insert the make directory commands&#xA;+ [cmd]&#xA;&#xA;// Delete the bat file after executing&#xA;+ '&#xA;(goto) 2&gt;nul &amp; del &quot;%~f0&quot;'&#xA;&#xA;" type="V_String" />
+            <Field name="cmd" size="2147483647" source="Formula: // Go to the correct drive&#xA;REGEX_Replace([workflow_dir], '(\w:).*', '$1')&#xA;&#xA;// Go to the workflow directory&#xA;+ '&#xA;cd '&#xA;+ [workflow_dir]&#xA;+ '&#xA;'&#xA;&#xA;// Insert the make directory commands&#xA;+ [cmd]&#xA;&#xA;// Delete the bat file after executing&#xA;+ '&#xA;(goto) 2&gt;nul &amp; del &quot;%~f0&quot;'&#xA;&#xA;" type="V_String" />
+            <Field name="workflow_dir" size="1073741823" source="Formula: Replace([Engine.WorkflowDirectory], '\\Mac\My Drive', 'Y:')" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -70,7 +70,7 @@ RE...</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="390" y="54" />
+        <Position x="546" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -100,7 +100,7 @@ RE...</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="558" y="186" />
+        <Position x="714" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -128,7 +128,7 @@ RE...</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-        <Position x="726" y="186" />
+        <Position x="882" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -187,9 +187,35 @@ RE...</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
     </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="546" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="cmd" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="cmd" size="2147483647" source="Formula: // Go to the correct drive&#xA;REGEX_Replace([workflow_dir], '(\w:).*', '$1')&#xA;&#xA;// Go to the workflow directory&#xA;+ '&#xA;cd '&#xA;+ [workflow_dir]&#xA;+ '&#xA;'&#xA;&#xA;// Insert the make directory commands&#xA;+ [cmd]&#xA;&#xA;// Delete the bat file after executing&#xA;+ '&#xA;(goto) 2&gt;nul &amp; del &quot;%~f0&quot;'&#xA;&#xA;" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="881" y="137" width="138.1511" height="149" />
+        <Position x="1037" y="137" width="138.1511" height="149" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -207,7 +233,7 @@ RE...</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
-            <Position x="906" y="186" />
+            <Position x="1062" y="186" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -247,17 +273,21 @@ RE...</DefaultAnnotationText>
     </Node>
   </Nodes>
   <Connections>
-    <Connection name="#1">
+    <Connection>
       <Origin ToolID="2" Connection="Output" />
-      <Destination ToolID="6" Connection="Input" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
     </Connection>
     <Connection name="#2">
       <Origin ToolID="5" Connection="Output" />
       <Destination ToolID="6" Connection="Input" />
     </Connection>
-    <Connection>
-      <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="2" Connection="Input" />
+    <Connection name="#1">
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
