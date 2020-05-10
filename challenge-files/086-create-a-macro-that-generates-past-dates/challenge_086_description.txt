@@ -1,0 +1,4 @@
+﻿Last week's solution can be found HERE!
+ 
+Create a macro that generates a table with the date and the day of the week for all dates from a given starting date to today. The user should be able to select the start date.
+Bonus 1: Add a selection that will allow the macro user to select whether or not to include weekends.Bonus 2: Create a duplicate macro that's encrypted so that no changes can be made. Leave the first macro on your canvas unencrypted so other challenge-takers can observe how your macro was built.

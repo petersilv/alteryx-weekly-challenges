@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<AlteryxDocument yxmdVer="2020.1">
+
+  <EncryptedData>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</EncryptedData>
+
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position height="59" width="59" x="0" y="0"/>
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <DefaultAnnotationText/>
+          <Left value="False"/>
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Date.Date">
+        <Position height="59" width="59" x="186" y="30"/>
+      </GuiSettings>
+      <Properties>
+        <Configuration/>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <AnnotationText>Select Date</AnnotationText>
+          <DefaultAnnotationText>Date (3)</DefaultAnnotationText>
+          <Left value="False"/>
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
+        <Position height="59" width="59" x="498" y="30"/>
+      </GuiSettings>
+      <Properties>
+        <Configuration/>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <AnnotationText>Skip the weekends</AnnotationText>
+          <DefaultAnnotationText>Check Box (6)</DefaultAnnotationText>
+          <Left value="False"/>
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="666" y="234"/>
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output7</Name>
+          <Abbrev/>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name/>
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False"/>
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput"/>
+    </Node>
+  </Nodes>
+
+  <Properties>
+    <Memory default="True"/>
+    <GlobalRecordLimit value="0"/>
+    <TempFiles default="True"/>
+    <Annotation includeToolName="False" on="True"/>
+    <ConvErrorLimit value="10"/>
+    <ConvErrorLimit_Stop value="False"/>
+    <CancelOnError value="False"/>
+    <DisableBrowse value="False"/>
+    <EnablePerformanceProfiling value="False"/>
+    <DisableAllOutput value="False"/>
+    <ShowAllMacroMessages value="False"/>
+    <ShowConnectionStatusIsOn value="True"/>
+    <ShowConnectionStatusOnlyWhenRunning value="False"/>
+    <ZoomLevel value="0"/>
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Check Box (6)</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Date (3)</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (7)</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True"/>
+      <Name>challenge_086_solution_ps_macro</Name>
+      <Description/>
+      <RootToolName/>
+      <ToolVersion/>
+      <ToolInDb value="False"/>
+      <CategoryName/>
+      <SearchTags/>
+      <Author/>
+      <Company/>
+      <Copyright/>
+      <DescriptionLink actual="" displayed=""/>
+      <Example>
+        <Description/>
+        <File/>
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True"/>
+    </Events>
+    <RuntimeProperties>
+      <Actions/>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2"/>
+          <Questions>
+            <Question>
+              <Type>Date</Type>
+              <Description>Select Date</Description>
+              <Name>Date (3)</Name>
+              <ToolId value="3"/>
+            </Question>
+            <Question>
+              <Type>BooleanGroup</Type>
+              <Description>Skip the weekends</Description>
+              <Name>Check Box (6)</Name>
+              <ToolId value="6"/>
+              <Questions/>
+              <Default value="False"/>
+              <Collapsable value="False"/>
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7"/>
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False"/>
+      <MacroDynamicOutputFields value="False"/>
+      <MacroImageStd value="39"/>
+      <MacroInputs/>
+      <MacroOutputs/>
+      <Wiz_CustomHelp value="False"/>
+      <Wiz_CustomGraphic value="False"/>
+      <Wiz_ShowOutput value="True"/>
+      <Wiz_OpenOutputTools>
+        <Tool Selected="True" ToolId="7"/>
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage/>
+      <Wiz_NoOutputFilesMessage/>
+      <Wiz_ChainRunWizard/>
+    </RuntimeProperties>
+  </Properties>
+
+</AlteryxDocument>
