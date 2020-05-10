@@ -6,6 +6,7 @@
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -15,19 +16,21 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="510" y="258" />
+        <Position x="390" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
+            <FormulaField expression="Replace([cmd], '\\Mac\My Drive', 'Y:')" field="cmd" size="2147483647" type="V_String" />
             <FormulaField expression="// Go to the correct drive&#xA;REGEX_Replace([Engine.WorkflowDirectory], '(\w:).*', '$1')&#xA;&#xA;// Go to the workflow directory&#xA;+ '&#xA;cd '&#xA;+ [Engine.WorkflowDirectory]&#xA;+ '&#xA;'&#xA;&#xA;// Insert the make directory commands&#xA;+ [cmd]&#xA;&#xA;// Delete the bat file after executing&#xA;+ '&#xA;(goto) 2&gt;nul &amp; del &quot;%~f0&quot;'&#xA;&#xA;" field="cmd" size="2147483647" type="V_String" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText><![CDATA[ ]]></AnnotationText>
-          <DefaultAnnotationText>cmd = // Go to the correct drive
-REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
+          <DefaultAnnotationText>cmd = Replace([cmd], '\\Mac\My Drive', 'Y:')
+cmd = // Go to the correct drive
+RE...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
@@ -40,7 +43,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="342" y="258" />
+        <Position x="222" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -67,7 +70,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="510" y="126" />
+        <Position x="390" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -97,7 +100,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="678" y="258" />
+        <Position x="558" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -125,7 +128,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-        <Position x="846" y="258" />
+        <Position x="726" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -148,7 +151,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="174" y="258" />
+        <Position x="54" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -186,7 +189,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1001" y="209" width="138.1511" height="149" />
+        <Position x="881" y="137" width="138.1511" height="149" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -204,7 +207,7 @@ REGEX_Replace([Engine.WorkflowDirectory], '(\w:...</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
-            <Position x="1026" y="258" />
+            <Position x="906" y="186" />
           </GuiSettings>
           <Properties>
             <Configuration>
