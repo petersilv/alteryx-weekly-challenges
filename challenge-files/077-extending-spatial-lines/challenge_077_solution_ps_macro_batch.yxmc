@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.TradeArea.TradeArea">
+        <Position x="474" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="Start" includeOut="True" />
+          <Units units="Miles" noOverlap="False" />
+          <Radius_FromField value="False" />
+          <Radii>5.0</Radii>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>5.0 Miles</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Start" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="End" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="SpatialObject_TradeArea" size="2147483647" source="TradeArea: Source=Start Radius=5.0 Units=Miles" type="SpatialObj" />
+            <Field name="RadiusSize" size="20" source="TradeArea: RadiusSize Units=Miles" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxTradeArea" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.PolySplit.PolySplit">
+        <Position x="606" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="SpatialObject_TradeArea" />
+          <SplitTo type="Point" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Start" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="End" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="RadiusSize" size="20" source="TradeArea: RadiusSize Units=Miles" type="V_String" />
+            <Field name="Split_SpatialObj" size="2147483647" source="PolySplit: SpatialObj Source=SpatialObject_TradeArea" type="SpatialObj" />
+            <Field name="Split_SequenceNum" source="PolySplit: SequenceNum Source=SpatialObject_TradeArea" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxPolySplit" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Distance.Distance">
+        <Position x="750" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputDistance value="True" />
+          <ReturnNearest value="False" />
+          <DistToInsideEdge value="False" />
+          <OutputDriveTimeAndDistance value="False" />
+          <SpatialObjSource>End</SpatialObjSource>
+          <SpatialObjDest>Split_SpatialObj</SpatialObjDest>
+          <DriveTimeDataSet>Latest</DriveTimeDataSet>
+          <AllowReverseRoute value="True" />
+          <MaxDriveTime value="30" />
+          <DriveDistanceOnly value="False" />
+          <OutputCardinalDirection value="True" />
+          <OutputDirectionDegrees value="False" />
+          <IsMetric value="False" />
+          <OutputUnits>Miles</OutputUnits>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Start" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="End" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="RadiusSize" size="20" source="TradeArea: RadiusSize Units=Miles" type="V_String" />
+            <Field name="Split_SpatialObj" size="2147483647" source="PolySplit: SpatialObj Source=SpatialObject_TradeArea" type="SpatialObj" />
+            <Field name="Split_SequenceNum" source="PolySplit: SequenceNum Source=SpatialObject_TradeArea" type="Int32" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=End Destination=Split_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=End Destination=Split_SpatialObj" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxDistance" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="906" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Label" order="Ascending" />
+            <Field field="DistanceMiles" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Label - Ascending
+DistanceMiles - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Start" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="End" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="RadiusSize" size="20" source="TradeArea: RadiusSize Units=Miles" type="V_String" />
+            <Field name="Split_SpatialObj" size="2147483647" source="PolySplit: SpatialObj Source=SpatialObject_TradeArea" type="SpatialObj" />
+            <Field name="Split_SequenceNum" source="PolySplit: SequenceNum Source=SpatialObject_TradeArea" type="Int32" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=End Destination=Split_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=End Destination=Split_SpatialObj" type="String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Label" order="Ascending" />
+            <Field field="DistanceMiles" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1074" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False">
+            <Field name="Label" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Start" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="End" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="RadiusSize" size="20" source="TradeArea: RadiusSize Units=Miles" type="V_String" />
+            <Field name="Split_SpatialObj" size="2147483647" source="PolySplit: SpatialObj Source=SpatialObject_TradeArea" type="SpatialObj" />
+            <Field name="Split_SequenceNum" source="PolySplit: SequenceNum Source=SpatialObject_TradeArea" type="Int32" />
+            <Field name="DistanceMiles" source="Distance: Distance Source=End Destination=Split_SpatialObj Units=Miles" type="Double" />
+            <Field name="Direction" size="2" source="Distance: Direction Source=End Destination=Split_SpatialObj" type="String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Label" order="Ascending" />
+            <Field field="DistanceMiles" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1242" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Label" selected="True" />
+            <SelectField field="Split_SpatialObj" selected="True" rename="New_Point" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="New_Point" size="2147483647" source="PolySplit: SpatialObj Source=SpatialObject_TradeArea" type="SpatialObj" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Label" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1386" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output9</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
+        <Position x="462" y="42" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Control Parameter (10)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="474" y="156" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="750" y="150" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="138" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input13</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="3" />
+              <Fields>
+                <Field name="Label" />
+                <Field name="SpatialObj" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>FiberA</c>
+                  <c>{ "type": "LineString", "coordinates": [ [ -105.079422, 39.819612 ], [ -105.081482, 39.680241 ] ] }</c>
+                </r>
+                <r>
+                  <c>FiberB</c>
+                  <c>{ "type": "LineString", "coordinates": [ [ -105.056076, 39.879181 ], [ -104.870682, 39.855992 ] ] }</c>
+                </r>
+                <r>
+                  <c>FiberC</c>
+                  <c>{ "type": "LineString", "coordinates": [ [ -105.003891, 39.644825 ], [ -104.828796, 39.737818 ] ] }</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo">
+        <Position x="306" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="SpatialObj" />
+          <SelectedItems>
+            <Item name="EndPointsObj" />
+          </SelectedItems>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Label" size="6" source="TextInput:" type="String" />
+            <Field name="SpatialObj" size="2147483647" source="TextInput:" type="SpatialObj" />
+            <Field name="Start" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+            <Field name="End" size="2147483647" source="SpatialInfo: EndPointsObj Source=SpatialObj" type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSpatialInfo" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="138" y="162" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="126" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Extend Line By</AnnotationText>
+          <DefaultAnnotationText>Numeric Up Down (63)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="12" Connection="Action" />
+      <Destination ToolID="3" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="10" Connection="Question" />
+      <Destination ToolID="11" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="10" Connection="Question" />
+      <Destination ToolID="12" Connection="Question" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="11" Connection="Action" />
+      <Destination ToolID="1" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="16" Connection="Action" />
+      <Destination ToolID="1" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="17" Connection="Question" />
+      <Destination ToolID="16" Connection="Question" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ControlParam.Control Parameter (10)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (13)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Numeric Up Down (17)</Name>
+        <Value />
+        <IsNumeric value="True" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>challenge_077_solution_ps_macro_batch</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="11" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="False" />
+              <Destination>1/SpatialObj/@field</Destination>
+            </Action>
+            <Action>
+              <Type>UpdateValueFormula</Type>
+              <Description />
+              <ToolId value="12" />
+              <Expression><![CDATA[if [#1] = 'Start' 
+then 'End' 
+else 'Start' 
+endif ]]></Expression>
+              <Destination>3/SpatialObjSource</Destination>
+              <Mode>Expression</Mode>
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="16" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>1/Radii</Destination>
+              <Mapping>Update Trade Area Radius</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (7)</Name>
+          <ToolId value="7" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (9)</Description>
+              <Name>Macro Output (9)</Name>
+              <ToolId value="9" />
+            </Question>
+            <Question>
+              <Type>ControlParam</Type>
+              <Description>Control Parameter (10)</Description>
+              <Name>Control Parameter (10)</Name>
+              <ToolId value="10" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (13)</Name>
+              <ToolId value="13" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Extend Line By</Description>
+              <Name>Numeric Up Down (17)</Name>
+              <ToolId value="17" />
+              <Minimum value="0" />
+              <Maximum value="100" />
+              <Increment value="1" />
+              <Default value="5" />
+              <Decimals value="0" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AllSame</OutputMode>
+        <ControlParams>
+          <ControlParam>
+            <Name>Control Parameter (10)</Name>
+            <Description>Control Parameter (10)</Description>
+          </ControlParam>
+        </ControlParams>
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="9" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

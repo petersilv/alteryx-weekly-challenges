@@ -1,0 +1,5 @@
+﻿Happy Monday! Last week's solution can be found HERE!
+ 
+In this week's challenge, a communications company is doing an analysis of fiber runs in the network. The current wiring needs to be extended a certain distance in each direction in a straight line. Take the provided lines and extend them 5 miles on each end. For more intermediate users, create a macro so the user can input the desired extension length for each run.
+ 
+The output should include:1. Name of the fiber2. The original spatial line object3. The new spatial line object 4. New length of line
